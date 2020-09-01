@@ -34,10 +34,12 @@ class MainTest(TestCase):
         self.client.get(url_for('auth.login'))
         self.assertTemplateUsed('login.html')
 
+    
+    #código Milkton
     def test_auth_login_post(self):
         fake_form = {
-            'username': 'fake',
-            'password': 'fake_password'
+          'username' : 'fake',
+          'password' :'fake_password'
         }
-        response = self.client.post(url_for('auth.login',data=fake_form))
-        self.assertRedirects(response,url_for('index'))
+        response = self.client.post(url_for('auth.login'), data=fake_form)
+        self.assertRedirects(response, url_for('index'))
