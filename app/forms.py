@@ -7,3 +7,12 @@ class LoginForm(FlaskForm):
 	username = StringField('User Name', validators=[DataRequired()])
 	password = PasswordField('Password', validators=[DataRequired()])
 	submit = SubmitField('Send')
+
+
+class TodoForm(FlaskForm):
+	description = StringField('Descripción',validators=[DataRequired()] )
+	submit = SubmitField('Crear')
+
+
+class DeleteForm(FlaskForm):
+	submit = SubmitField('Borrar')
